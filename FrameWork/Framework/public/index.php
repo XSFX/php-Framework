@@ -12,7 +12,3 @@ include '../Vendor/psr/Autoload.php';
   
   ?>
   
-  <form action="/new/url" method="get">
-  	<input name="text_fiels" type="text"/>
-  	<input type="submit"/>
-  </form>

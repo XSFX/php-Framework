@@ -3,7 +3,7 @@
 namespace Framework\Vendor\App;
 // use \Framework\Apps\Bundle\Controllers\homeController;
 /*
- * TODO handle the incoming requests and pont them to ther controllers and methods
+ *  handle the incoming requests and pont them to ther controllers and methods
  */
 class Routing {
 	public $request;
@@ -15,8 +15,8 @@ class Routing {
 	}
 	public function urlToString() {
 		
-		if (isset ( $this->request->urlElements )) {
-			unset ( $this->request->urlElements [0] );
+		if (isset ( $this->request->urlElements)) {
+			unset ( $this->request->urlElements[0] );
 			
 			$this->request->urlElements = array_values ( $this->request->urlElements );
 		}
