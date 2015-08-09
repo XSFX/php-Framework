@@ -1,12 +1,13 @@
 <?php 
 
-use \Framework\Apps\Bundle\Router;
+use \Framework\Vendor\App\App;
 
 //include '../Apps/Bundle/Router.php';
 include '../Vendor/psr/Autoload.php';
 
 
-  $c = new Router;
+  $c = new App();
+ 
 //   $c->urls();
   
   
