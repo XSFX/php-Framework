@@ -7,7 +7,7 @@ class DatabaseConfig{
 	public $password = "pass";
 	public $host = "localhost";
 	public $database = "framework";
-	public $connection;
+	public static $connection;
 	private static $init = 0;
 	
 	public function __construct(){
@@ -18,11 +18,12 @@ class DatabaseConfig{
 		}
 		self::$init++;
 		return $this->initConnection();
+		
 	}
 	
 	public  function initConnection(){
 // 		echo "connection";
-		 $this->connection = mysqli_connect($this->host, $this->user, $this->password, $this->database);
+		 self::$connection = mysqli_connect($this->host, $this->user, $this->password, $this->database);
 		 if (mysqli_connect_errno())
 		 {
 		 	echo "Failed to connect to MySQL: " . mysqli_connect_error();

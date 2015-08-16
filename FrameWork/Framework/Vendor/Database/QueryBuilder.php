@@ -3,17 +3,17 @@
 namespace Framework\Vendor\Database;
 
 class QueryBuilder {
-	private $commands = array ();
-	private $operants = array ();
-	private $variables = array ();
+	
+	private $table;
 	public $query;
 	
-	public function __construct() {
-		
+	public function __construct($table = null) {
+		$this->table = $table;
 	}
 	public function where($column, $operator, $term) {
-		$query = ' WHERE ' .$column.' '. $operator.' '.$term;
+		$query = ' WHERE '.$column.' '. $operator.' '.$term;
 		$this->query .= $query;
+// 		print_r($query);
 		return $this;
 	}
 	public function orWhere($column, $operator, $term) {
@@ -26,13 +26,13 @@ class QueryBuilder {
 		$this->query .= $query;
 		return $this;
 	}
-	public function getTable($table) {
-		$query = ' FROM ' . $table;
-		$this->query .= $query;
-		return $this;
-	}
-	public function select($column = '*') {
-		$query = ' SELECT ' . $column;
+// 	public function getTable($table) {
+// 		$query = ' FROM ' . $table;
+// 		$this->query .= $query;
+// 		return $this;
+// 	}
+	public function select($table, $column = '*') {
+		$query = ' SELECT ' . $column. ' FROM ' . $table;
 		$this->query .= $query;
 		return $this;
 	}
@@ -67,6 +67,7 @@ class QueryBuilder {
 			if ($i != 0) {
 				$query .= ', ';
 			}
+// 			print_r($var);
 			$query .= ' ' . $col . ' = ' . $var . ' ';
 			$i++;
 		}
@@ -91,4 +92,10 @@ class QueryBuilder {
 		$this->query = $query;
 		return $this;
 	}
+// 	public function leftJoin($leftTable, $rightTable, $leftArg, $rightArg ){
+// 		$query = ' JEFT JOIN '. $rightTable . ' ON ' .$leftTable.'.'. $leftArg. ' = '.$rightTable.'.'.$rightArg.';' ;
+// 		$this->quary .= $quary;
+// 		return $this;
+// 	}
+	
 }

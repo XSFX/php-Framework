@@ -11,4 +11,8 @@ class test extends Database{
 	
 	public $name;
 	
+	public function accounts(){
+		return $this->hasMany('account');
+	}
+	
 }
