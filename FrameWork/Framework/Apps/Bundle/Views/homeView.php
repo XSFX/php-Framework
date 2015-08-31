@@ -4,9 +4,6 @@
 <title>FrameWork</title>
 </head>
 <body>
-  <form action="/home" method="post">
-  	<input name="text_fiels" type="text"/>
-  	<input type="submit"/>
-  </form>
+ 	<h2>Home</h2>
 </body>
 </html>

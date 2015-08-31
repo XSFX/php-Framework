@@ -7,8 +7,10 @@ class Router{
 	
 	public function __construct(){
 		$routers = [
-				'home' => 'homeController@home',
-				'notHome/new/url' => 'notHomeController@notHome'
+				'' => 'userController@login',
+				
+				'dev' => 'MainController@dev', // !!!Remove this line before publishing the app!!!
+				
 		];
 		new Routing($routers);
 		

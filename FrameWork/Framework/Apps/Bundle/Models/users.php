@@ -3,7 +3,7 @@
 namespace Framework\Apps\Bundle\Models;
 use Framework\Vendor\Database\Database;
 
-class account extends Database{
+class users extends Database{
 	public $id;
 
 	public $name;
@@ -12,11 +12,5 @@ class account extends Database{
 	
 	public $test_id;
 	
-	public function tests(){
-		return $this->belongsToMany('test');
-	}
 	
-	public function test(){
-		return $this->hasOne('test');
-	}
 }

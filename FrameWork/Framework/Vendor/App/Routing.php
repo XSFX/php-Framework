@@ -1,7 +1,7 @@
 <?php
 
 namespace Framework\Vendor\App;
-// use \Framework\Apps\Bundle\Controllers\homeController;
+
 /*
  *  handle the incoming requests and pont them to ther controllers and methods
  */
@@ -21,7 +21,16 @@ class Routing {
 			$this->request->urlElements = array_values ( $this->request->urlElements );
 		}
 		
-		return implode ( '/', $this->request->urlElements );
+		
+		
+
+		
+		
+// 		print_r($this->request->urlElements);
+		if (isset($this->request->urlElements)){
+			return implode ( '/', $this->request->urlElements );
+		}
+		
 	}
 	
 	public function getControllerAndMethod($arrayIndex){
@@ -37,4 +46,17 @@ class Routing {
 		
 		
 	}
+	
+// 	public function urlVars(){
+// 		// 		print_r($this->request->urlElements);
+// 		foreach ($this->request->urlElements as $key => $element){
+				
+// 			if(substr($element,0,1) == '{' && substr($element,-1) == '}'){
+// 				$elements[] = $element;
+// 			}
+				
+// 		}
+// 		return $elements;
+// 	}
+	
 }
