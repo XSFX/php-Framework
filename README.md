@@ -1,3 +1,3 @@
 # php-Framework
-Vary Simple framework.
+Very Simple framework.
 DONT USE FOR PRODUCTION!!!
